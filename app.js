@@ -9,7 +9,23 @@ App({
     // 登录
     wx.login({
       success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        var user = new Bmob.User();
+        //官方文档使用es6语法 promise，拿res.code让bmob后台换取openid
+        user.loginWithWeapp(res.code).then(function(user){
+          // console.log(user);
+          wx.setStorage({
+            key: 'openid',
+            data: user.attributes.authData.weapp.openid,
+          })
+          // if(user){
+          //   wx.setStorage({
+          //     key: 'openid',
+          //     data: user.get(openid)
+          //   })
+          // }
+        })
+        // console.log(res.code)
+        // // 发送 res.code 到后台换取 openId, sessionKey, unionId
       }
     })
     // 获取用户信息
@@ -34,6 +50,10 @@ App({
     })
   },
   globalData: {
-    userInfo: null
-  }
+    userInfo: null,
+  },
+
 })
+var Bmob = require('/utils/bmob.js');
+// Application ID, REST API Key  在Bmob应用密钥里
+Bmob.initialize('47144b3b2a96e2442d1ef0c8437cc70f', 'a16b4d38c78b0899e9d01cbffeda0c99');
