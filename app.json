@@ -1,9 +1,9 @@
 {
   "pages": [
+    "pages/me/me",
     "pages/Detailed/Detailed",
     "pages/Bill/Bill",
     "pages/Booking/Booking",
-    "pages/me/me",
     "pages/year/year",
     "pages/perData/perData",
     "pages/use/use",
