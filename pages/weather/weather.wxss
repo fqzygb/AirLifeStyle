@@ -1,0 +1,95 @@
+/**index.wxss**/
+page{
+  background: linear-gradient(#377ef1, #53cfac) no-repeat fixed bottom;
+}
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 128rpx;
+  border-bottom:1px dashed #eef3fc;
+  margin-bottom: 20rpx;
+  border-top:1px solid #eef3fc;
+}
+.userinfo text{
+  line-height: 91rpx;
+  margin: 20rpx;
+}
+.userinfo-avatar {
+  width: 91rpx;
+  height: 91rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.userinfo button{
+   font-size:20rpx;
+   text-align: left;
+}
+.userinfo-nickname {
+  color: #fff;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+.weather{
+  text-align: left;
+  padding:0 3%;
+  color:#fff;
+}
+.newweather{
+  text-align:center;
+  font-size:60rpx;
+  margin:20rpx 0 10rpx;
+}
+.newdesc{
+   text-align:center;
+   font-size:30rpx;
+}
+.newbottom{
+   text-align:center;
+   font-size:30rpx;
+   border-top:1px solid #fff;
+   padding:30rpx 0;
+}
+.newbottom .newleft{
+  display:inline-block;
+  width:50%;
+  text-align: right;
+}
+.newbottom .newright{
+  display:inline-block;
+  width:50%;
+  text-indent: 20rpx;
+  text-align: left;
+}
+.weather-img{
+  width:60rpx;
+}
+.new-ul{
+  margin:50rpx 0;
+  text-align: center;
+}
+.new-ul .new-li{
+  width:38%;
+  margin:2%;
+  text-align: left;
+  display:inline-block;
+  border:1px solid #fff;
+  border-radius: 20rpx;
+  padding:20rpx;
+}
+.newli-title{
+  font-weight: 600;
+  font-size: 40rpx;
+  padding-bottom: 20rpx;
+  margin-bottom: 20rpx;
+  border-bottom:1px solid #fff;
+}
+.newli-title text{
+  font-size:30rpx;
+  font-weight: 500;
+}
+.new-li .newtian{
+  margin-bottom: 20rpx;
+}

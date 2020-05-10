@@ -5,9 +5,9 @@
   <view class="txt">wx:wxid_pjelplqhpkcf22
 </view>
   <view class="img">
-    <image src="/icons/微信图片1.jpg"></image>
+    <image src="#"></image>
   </view>
   <view class="img">
-    <image src="/icons/微信图片2.jpg"></image>
+    <image src="#"></image>
   </view>
 </view>

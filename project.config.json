@@ -137,6 +137,20 @@
 					"id": -1,
 					"name": "意见编辑",
 					"pathName": "pages/suggestEdit/suggestEdit",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/weather/weather",
+					"pathName": "pages/weather/weather",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/me/me",
+					"pathName": "pages/me/me",
 					"scene": null
 				}
 			]

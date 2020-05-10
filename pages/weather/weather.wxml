@@ -1,0 +1,131 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">欢迎 {{userInfo.nickName}} 的访问！</text>
+      <button  bindtap="changeCity">切换城市</button>
+    </block>
+  </view>
+  <view class="weatherbody">
+     <view class="weather"> 
+        <view class="newweather">{{weatherData.currentCity}}</view>
+        <view class="newdesc">{{weatherData.temperature}} </view>
+        <view class="newdesc">{{weatherData.weatherDesc}} </view>
+         <view class="newdesc">
+              {{weatherResults.weather_data[0].date}}
+        </view>
+        <view class="new-ul">
+          <view class="new-li">
+            <view class="newli-title">
+             今天
+             <text>{{weatherResults.weather_data[0].temperature}} </text>
+            </view>
+            <view class="newtian"> 
+              <text>白天：</text>
+              <image src="{{weatherResults.weather_data[0].dayPictureUrl}}" class="weather-img" mode="widthFix"></image>
+            </view>
+            <view class="newtian">
+                <text>晚上：</text>
+                <image src="{{weatherResults.weather_data[0].nightPictureUrl}}" class="weather-img"  mode="widthFix"></image>
+            </view>
+            <view class="newtian">
+               {{weatherResults.weather_data[0].weather}}
+            </view>
+            <view>
+              {{weatherData.wind}}
+            </view>
+           </view>
+           <view class="new-li">
+              <view class="newli-title">
+                {{weatherResults.weather_data[1].date}}
+                <text>{{weatherResults.weather_data[1].temperature}}                      </text>
+              </view>
+              <view class="newtian"> 
+                <text>白天：</text>
+                <image src="{{weatherResults.weather_data[1].dayPictureUrl}}" class="weather-img" mode="widthFix"></image>
+              </view>
+               <view class="newtian">
+                  <text>晚上：</text>
+                  <image src="{{weatherResults.weather_data[1].nightPictureUrl}}" class="weather-img"  mode="widthFix"></image>
+             </view>
+             <view class="newtian">
+               {{weatherResults.weather_data[1].weather}}
+             </view>
+             <view>
+               {{weatherResults.weather_data[1].wind}}
+             </view>
+           </view>
+            <view class="new-li">
+              <view class="newli-title">
+              {{weatherResults.weather_data[2].date}}
+              <text>{{weatherResults.weather_data[2].temperature}}                      </text>
+              </view>
+              <view class="newtian"> 
+                <text>白天：</text>
+                <image src="{{weatherResults.weather_data[2].dayPictureUrl}}" class="weather-img" mode="widthFix"></image>
+              </view>
+               <view class="newtian">
+                  <text>晚上：</text>
+                  <image src="{{weatherResults.weather_data[2].nightPictureUrl}}" class="weather-img"  mode="widthFix"></image>
+             </view>
+             <view class="newtian">
+               {{weatherResults.weather_data[2].weather}}
+             </view>
+             <view>
+               {{weatherResults.weather_data[2].wind}}
+             </view>
+           </view>
+          <view class="new-li">
+              <view class="newli-title">
+              {{weatherResults.weather_data[3].date}}
+              <text>{{weatherResults.weather_data[3].temperature}}                      </text>
+              </view>
+              <view class="newtian"> 
+                <text>白天：</text>
+                <image src="{{weatherResults.weather_data[3].dayPictureUrl}}" class="weather-img" mode="widthFix"></image>
+              </view>
+               <view class="newtian">
+                  <text>晚上：</text>
+                  <image src="{{weatherResults.weather_data[3].nightPictureUrl}}" class="weather-img"  mode="widthFix"></image>
+             </view>
+             <view class="newtian">
+               {{weatherResults.weather_data[3].weather}}
+             </view>
+             <view>
+               {{weatherResults.weather_data[3].wind}}
+             </view>
+           </view>
+
+
+        </view>
+         <view class="newbottom">
+          <view class="newbottomtitle">
+              <text class="newleft">PM25：</text>
+              <text class="newright">{{weatherData.pm25}}</text>
+          </view>
+           <view class="newbottomtitle">
+              <text class="newleft">{{weatherResults.index[0].tipt}}：</text>
+              <text class="newright">{{weatherResults.index[0].zs}}</text>
+          </view>
+          <view class="newbottomtitle">
+              <text class="newleft">{{weatherResults.index[1].tipt}}：</text>
+              <text class="newright">{{weatherResults.index[1].zs}}</text>
+          </view>
+          <view class="newbottomtitle">
+              <text class="newleft">{{weatherResults.index[2].tipt}}：</text>
+              <text class="newright">{{weatherResults.index[2].zs}}</text>
+          </view>
+          <view class="newbottomtitle">
+              <text class="newleft">{{weatherResults.index[3].tipt}}：</text>
+              <text class="newright">{{weatherResults.index[3].zs}}</text>
+          </view>
+          <view class="newbottomtitle">
+              <text class="newleft">{{weatherResults.index[4].tipt}}：</text>
+              <text class="newright">{{weatherResults.index[4].zs}}</text>
+          </view>
+         </view>
+      </view>
+  </view>
+</view>

@@ -10,9 +10,12 @@
     "pages/reward/reward",
     "pages/suggest/suggest",
     "pages/suggestEdit/suggestEdit",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/weather/weather"
+
 
   ],
+  
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#FFD700",
@@ -52,6 +55,12 @@
       }
     ]
   },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "根据用户当前位置获取实时天气信息"
+    }
+  },
+ 
   "sitemapLocation": "sitemap.json",
   "plugins": {
     "calendar": {

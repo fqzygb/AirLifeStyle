@@ -22,19 +22,12 @@ Page({
   },
 
   goBack() {
-    wx.showModal({
-      title: '退出',
-      content: '你确定退出，返回主页吗？',
-      success(res) {
-        if (res.confirm) {
-          wx.switchTab({
-            url: '../Booking/Booking',
+    
+          wx.navigateTo
+         ({
+            url: '../weather/weather',
           })
-        } else if (res.cancel) {
-          console.log('用户点击取消')
-        }
-      }
-    })
+        
   },
 
   /**

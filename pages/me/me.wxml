@@ -25,7 +25,7 @@
     <navigator url="/pages/suggest/suggest?name={{userInfo.nickName}}" class="t-3">意见反馈
       <text>></text>
     </navigator>
-    <view class="setting" bindtap="goBack">设置
+    <view class="setting" bindtap="goBack">天气预报
       <text>></text>
     </view>
   </view>
