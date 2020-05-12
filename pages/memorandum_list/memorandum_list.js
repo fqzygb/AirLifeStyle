@@ -9,9 +9,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    username: "",
+    username: "柚子袖",
     openid: "",
-    memorandumList: [],
+    
    
     list: [
       //   {
@@ -67,10 +67,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // var username = options.name;
-    // this.setData({
-    //   username
-    // })
+    var username = options.name;
+    this.setData({
+      username
+    })
 
 
 
@@ -92,7 +92,7 @@ Page({
   //     url: '../memorandum_add/memorandum_add'
   //   })
   // },
-  edit: function (e) {
+  edit1: function (e) {
     var id = e.currentTarget.dataset.id;
     wx.navigateTo({
       url: '../memorandum_add/memorandum_add?id=' + id
@@ -184,12 +184,10 @@ Page({
 
 
 
-  /**
-   * 删除按钮
-   */
   btnDelete(e) {
     // 遍历数组中的内容 如果有被选中的就存到新的数组 如果没有则弹框显示还没选择要删除的内容
-    var arr = this.data.list;
+    //var arr = this.data.list;
+    var id = e.currentTarget.dataset.id;
     var that = this;
     // var newArr = []
     wx.showModal({
@@ -197,19 +195,16 @@ Page({
       content: '你确认删除所选内容吗',
       success: function (res) {
         if (res.confirm) {
-            
-
-              var Booking = Bmob.Object.extend("Design_memorandum");
+         
+            var Booking = Bmob.Object.extend("Design_memorandum");
               var query = new Bmob.Query(Booking);
-              query.get(v.id, {
+              query.get(id, {
                 success: function (obj) {
                   obj.destroy({
                     success: function (del) {
                       console.log("删除成功");
                       that.onShow();
-                      that.setData({
-                        editText: "编辑"
-                      })
+                      
                     },
                     error: function (obj, error) {
                       console.log("删除失败");
@@ -219,13 +214,13 @@ Page({
                 error: function (obj, error) {
                   console.log("查询不到")
                 }
-              }
+              })
             
-          )
+          
         }
       }
-    
-  },
+    })
+},
 
   // /**
   // * 单选按钮

@@ -5,7 +5,7 @@
           <view class="card">
               <view class="main" bindtap="toggle" data-id="{{item.id}}">
                   <view class="content">{{item.attributes.suggestContent}} </view>
-                  <view class="time">{{item.attributes.curday}}</view>
+                  <view class="time">{{item.updatedAt}}</view>
               </view>  
               <view class="options" wx:if="{{item.isShow}}">
                   <view class="option edit" bindtap='edit' data-id="{{item.id}}">编辑</view> 

@@ -28,5 +28,8 @@
     <view class="setting" bindtap="goBack">天气预报
       <text>></text>
     </view>
+    <view class="setting" bindtap="goMemorandum_list">备忘录
+      <text>></text>
+    </view>
   </view>
 </view>

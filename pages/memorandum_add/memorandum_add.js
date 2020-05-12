@@ -25,6 +25,7 @@ Page({
       txtarea
     })
   },
+
   /**
  * 提交按钮
  */
@@ -79,11 +80,10 @@ Page({
         }
       })
     }
-
-
-
   },
-
+  cancle: function () {
+    wx.navigateBack();
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -121,7 +121,9 @@ Page({
       content: val
     });
   },
-  
+  cancle: function () {
+    wx.navigateBack();
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

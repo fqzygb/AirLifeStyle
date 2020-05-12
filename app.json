@@ -13,7 +13,8 @@
     "pages/logs/logs",
     "pages/weather/weather",
     "pages/memorandum_list/memorandum_list",
-    "pages/memorandum_add/memorandum_add"
+    "pages/memorandum_add/memorandum_add",
+    "pages/memorandum_addEdit/memorandum_addEdit"
     
 
 

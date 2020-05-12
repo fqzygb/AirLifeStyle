@@ -29,6 +29,14 @@ Page({
           })
         
   },
+  goMemorandum_list() {
+
+    wx.navigateTo
+      ({
+        url: '../memorandum_list/memorandum_list',
+      })
+
+  },
 
   /**
    * 生命周期函数--监听页面加载
