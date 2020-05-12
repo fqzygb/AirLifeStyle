@@ -11,7 +11,10 @@
     "pages/suggest/suggest",
     "pages/suggestEdit/suggestEdit",
     "pages/logs/logs",
-    "pages/weather/weather"
+    "pages/weather/weather",
+    "pages/memorandum_list/memorandum_list",
+    "pages/memorandum_add/memorandum_add"
+    
 
 
   ],

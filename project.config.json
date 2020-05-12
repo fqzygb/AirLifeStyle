@@ -114,13 +114,6 @@
 				},
 				{
 					"id": -1,
-					"name": "个人资料",
-					"pathName": "pages/perData/perData",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
 					"name": "意见反馈",
 					"pathName": "pages/suggest/suggest",
 					"query": "",
@@ -144,6 +137,27 @@
 					"id": -1,
 					"name": "pages/me/me",
 					"pathName": "pages/me/me",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/memorandum_add/memorandum_add",
+					"pathName": "pages/memorandum_add/memorandum_add",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/memorandum_list/memorandum_list",
+					"pathName": "pages/memorandum_list/memorandum_list",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/memorandum_list/memorandum_list",
+					"pathName": "pages/memorandum_list/memorandum_list",
 					"query": "",
 					"scene": null
 				}

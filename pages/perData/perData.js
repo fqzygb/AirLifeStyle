@@ -1,4 +1,5 @@
 // pages/perData/perData.js
+const app = getApp()
 var util = require('../../utils/util.js');
 // 引进Bmob后端云JS
 var Bmob = require('../../utils/bmob.js');
