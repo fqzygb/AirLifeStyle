@@ -29,11 +29,11 @@ Page({
           })
         
   },
-  goMemorandum_list() {
+  goMemorandum() {
 
     wx.navigateTo
       ({
-        url: '../memorandum_list/memorandum_list',
+        url: '../memorandum/memorandum',
       })
 
   },

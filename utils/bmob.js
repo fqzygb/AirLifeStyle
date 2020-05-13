@@ -5533,7 +5533,7 @@
                 wx.removeStorage({
                     key: Bmob._getBmobPath(Bmob.User._CURRENT_USER_KEY),
                     success: function (res) {
-                        // console.log(res.data)
+                        console.log(res.data)
                     }
                 });
             },

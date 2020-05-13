@@ -14,7 +14,9 @@
     "pages/weather/weather",
     "pages/memorandum_list/memorandum_list",
     "pages/memorandum_add/memorandum_add",
-    "pages/memorandum_addEdit/memorandum_addEdit"
+    "pages/memorandum_addEdit/memorandum_addEdit",
+    "pages/memorandum/memorandum",
+    "pages/memorandum/detail/index"
     
 
 
