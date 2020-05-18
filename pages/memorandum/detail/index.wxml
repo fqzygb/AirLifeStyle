@@ -7,14 +7,14 @@
 
     <view class="page__bd">
         <view class="weui-article">
-            <view class="weui-article__h1"> {{rows.attributes.title}} {{rows.attributes.id}} {{rows.attributes.objectId}}</view>
+            <view class="weui-article__h1"> 标题：{{rows.attributes.title}} </view>
             <view class="weui-article__section">
               
 
                 <view class="weui-article__section">
                    
                     <view class="weui-article__p">
-                       {{rows.attributes.content}}
+                     内容：  {{rows.attributes.content}}
                     </view>
                      <view class="weui-article__h3">创建时间：{{rows.createdAt}} </view>
                 </view>

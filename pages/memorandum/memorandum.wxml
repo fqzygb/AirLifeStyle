@@ -36,11 +36,11 @@
             <view class="weui-media-box__desc">{{item.attributes.content}}</view>
             <view class="weui-media-box__info">
               <view class="weui-media-box__info__meta weui-media-time">时间：{{item.updatedAt}}</view>
-          <!-->   <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">来源:开发者</view>-->
+          <!--   <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">来源:开发者</view>-->
               <view class="weui-media-box__info__meta weui-media-box__info__operate">
-                <icon type="cancel dels" size="16"></icon>
-                <text class="del" catchtap="deleteDiary" data-id="{{item.id}}">删除</text>
-                <icon type="success edits" size="16"></icon>
+          <!--       <icon type="cancel dels" size="26"></icon> -->
+                <text class="del" catchtap="deleteDiary" data-id="{{item.id}}" >删除</text>
+              <!--   <icon type="success edits" size="26"></icon>-->
                 <text catchtap="toModifyDiary" data-id="{{item.id}}" data-content="{{item.attributes.content}}" data-title="{{item.attributes.title}}">编辑</text>
               </view>
             </view>

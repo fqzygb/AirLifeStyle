@@ -78,6 +78,9 @@ Page({
         })
       },
     });
+
+
+    getList(this);
     // var user = new Bmob.User() //开始注册用户
     // user.auth().then(function (obj) {
     //   console.log('登陆成功')
@@ -139,43 +142,48 @@ Page({
     })
   },
   onShow: function () {
-    // var that = this;
-    // // var openID = "";
-    // wx.getStorage({
-    //   key: 'openid',
-    //   success: function (res) {
-    //     // console.log(res)
-    //     that.setData({
-    //       openid: res.data
-    //     });
-    //     // console.log(that.data.openid);
-    //     var openID = that.data.openid;
-    //     // console.log(openID)
-    //     // 获取数据库的数据
-    //     // 连接数据库创建类
-    //     var Booking = Bmob.Object.extend("Design_memorandum");
-    //     var query = new Bmob.Query(Booking);
-    //     // 条件查询 条件为用户名等于当前用户名
-    //     query.equalTo("userID", openID)
-    //     query.find({
-    //       success: function (result) {
-    //         // console.log(result)
-    //         console.log("共查询到" + result.length + "条记录");
-    //         // 反转数组 让最后加入的显示在最前面
-    //         result.reverse();
-    //         // 把获得的数据添加到data里面
-    //         that.setData({
-    //           diaryList: result
-    //         })
-    //         console.log(that.data.diaryList)
-    //       },
-    //       error: function (error, result) {
-    //         console.log("查询不到")
-    //       }
-    //     })
+    var that = this;
+    // var openID = "";
+    wx.getStorage({
+      key: 'openid',
+      success: function (res) {
+        // console.log(res)
+        that.setData({
+          openid: res.data
+        });
+        // console.log(that.data.openid);
+        var openID = that.data.openid;
+        // console.log(openID)
+        // 获取数据库的数据
+        // 连接数据库创建类
+        var Booking = Bmob.Object.extend("Design_memorandum");
+        var query = new Bmob.Query(Booking);
+        // 条件查询 条件为用户名等于当前用户名
+        query.equalTo("userID", openID)
+        query.find({
+          success: function (result) {
+            // console.log(result)
+            console.log("共查询到" + result.length + "条记录");
+            // 反转数组 让最后加入的显示在最前面
+            result.reverse();
+            // 把获得的数据添加到data里面
+            that.setData({
+              diaryList: result
+            })
+            console.log(that.data.diaryList)
+          },
+          error: function (error, result) {
+            console.log("查询不到")
+          }
+        })
 
-    //   },
-    // })
+      },
+    })
+
+
+
+
+
    // var openID = that.data.openid;
 
 
@@ -260,9 +268,10 @@ Page({
     })
   },
   addDiary: function (event) {
+   // var that = this;
     var title = event.detail.value.title;
     var content = event.detail.value.content;
-    //var userID = that.data.openid;
+    var userID = this.data.openid;
    // var formId = event.detail.formId;
     console.log("event", event)
     if (!title) {
@@ -290,7 +299,7 @@ Page({
       var Diary = Bmob.Object.extend("Design_memorandum");
       var diary = new Diary();
       diary.set("title", title);
-      //diary.set("userID", currentUser.userInfo.username);
+      diary.set("userID", userID);
       //diary.set("formId", formId);//保存formId
       diary.set("content", content);
       //var f = Bmob.File("a.jpg", [""]);
@@ -525,6 +534,7 @@ function getList(t, k) {
   //普通会员匹配查询
   query.equalTo("title", k);
   query.equalTo("userID", openID);
+  
   query1.equalTo("userID", openID);
   query.descending('createdAt');
   //query.include("own")

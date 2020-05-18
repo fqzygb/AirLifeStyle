@@ -7,7 +7,8 @@
 <view class="top">意见反馈</view>
   <view class="item" wx:for="{{list}}" wx:key="index">
     <view class="name">{{item.attributes.username}}</view>
-    <view class="sug">{{item.attributes.suggestContent}}   <text class="cur">{{item.attributes.curday}}</text> </view>
+    <view class="sug">{{item.attributes.suggestContent}}   </view>
+    <view> <text class="cur">{{item.attributes.curday}}</text></view>
     
   </view>
 </view>

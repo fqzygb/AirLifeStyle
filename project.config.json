@@ -165,6 +165,14 @@
 					"id": -1,
 					"name": "pages/memorandum/memorandum",
 					"pathName": "pages/memorandum/memorandum",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/memorandum/detail/index",
+					"pathName": "pages/memorandum/detail/index",
+					"query": "",
 					"scene": null
 				}
 			]
