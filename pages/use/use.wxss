@@ -21,9 +21,17 @@ view text{
   font-weight: bold;
 
 }
-.contain .content .con{
+.contain .content .con-1{
   line-height: 50rpx;
   text-indent: 2em;
   margin-bottom: 20rpx;
+  
+
+}
+.contain .content .con-1{
+  line-height: 50rpx;
+  text-indent: 2em;
+  margin-bottom: 20rpx;
+  color: red;
 
 }

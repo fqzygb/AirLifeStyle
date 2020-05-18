@@ -338,7 +338,7 @@ Page({
           console.log("提交成功")
           wx.showToast({
             title: '提交成功',
-            duration: 2000
+            duration: 1000
           })
           // 用setTimeout定时跳转到明细页面
           // 跳转回备忘录页面   用定时器 提交成功显示后2秒  因为是tabBar navto不能跳到
@@ -368,7 +368,7 @@ Page({
           wx.showToast({
             title: '提交失败',
             icon: 'none',
-            duration: 2000
+            duration: 1000
           })
         }
       })

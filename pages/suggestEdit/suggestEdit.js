@@ -60,7 +60,7 @@ Page({
         success:function(result){
           wx.showToast({
             title: '提交成功',
-            duration:2000
+            duration:1000
           })
           // 用setTimeout定时跳转到意见反馈页面
           setTimeout(function () {

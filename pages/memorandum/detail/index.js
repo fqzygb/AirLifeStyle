@@ -1,4 +1,4 @@
-// pages/index/detail/index.js
+
 var Bmob = require('../../../utils/bmob.js');
 
 var app = getApp();

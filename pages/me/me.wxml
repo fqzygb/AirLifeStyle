@@ -10,18 +10,18 @@
     </block>
   </view>
   <view class="bottom">
-    <navigator url="/pages/perData/perData?name={{userInfo.nickName}}&&picPath={{userInfo.avatarUrl}}" class="per-data">个人资料
+   <!-- <navigator url="/pages/perData/perData?name={{userInfo.nickName}}&&picPath={{userInfo.avatarUrl}}" class="per-data">个人资料
       <text>></text>
-    </navigator>
-    <navigator url="/pages/use/use" class="t-1">使用条款
+    </navigator>-->
+    <navigator url="/pages/use/use" class="t-1">使用方法
       <text>></text>
     </navigator>
     <!-- <navigator class="t-2">导出数据
       <text>></text>
-    </navigator> -->
+    </navigator> 
     <navigator url="/pages/reward/reward" class="t-2">奖励开发者
       <text>></text>
-    </navigator>
+    </navigator>-->
     <navigator url="/pages/suggest/suggest?name={{userInfo.nickName}}" class="t-3">意见反馈
       <text>></text>
     </navigator>

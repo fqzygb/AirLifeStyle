@@ -13,75 +13,14 @@ Page({
     windowWidth: 0,
     limit: 10,
     diaryList: [],
-    modifyDiarys: false
+    modifyDiarys: false,
+    openid: "",
+
   },
   onReady: function (e) {
 
 
-    // 创建Bmob.Object子类
-    // var Diary = Bmob.Object.extend("diary");
-    // var objects = new Array();
-    // for (var i = 0; i < 5; i++) {
-    //   // 创建该类的一个实例
-    //   var diary = new Diary();
-    //   diary.set('objectId', 'ba74dc1f09')
-    //   diary.set('title', '9999999')
-    //   diary.set('content', '99999')
-    //   objects.push(diary)
-    // }
-
-    // 批量创建（更新）
-    // Bmob.Object.saveAll(objects).then(function (objects) {
-    //   // 成功
-    //   console.log("批量更新成功", objects);
-    // },
-    //   function (error) {
-    //     // 异常处理
-    //     console.log("异常处理");
-    //   });
-
-    // var objects = new Array()
-    // objects.push({ "id": "1e9b9a093e", "className": "diary" })
-
-    // // 批量删除
-    // Bmob.Object.destroyAll(objects).then(function (res) {
-    //   // 成功
-    // },
-    //   function (error) {
-    //     // 异常处理
-    //   });
-
-
-    // wx.request({
-    //   url: 'https://api.bmob.cn/1/pay/refund',
-    //   header: {
-    //     'Content-Type': 'application/json',
-    //     'X-Bmob-Application-Id': 'c6fad58fb29451651c0a4dab46506498',
-    //     'X-Bmob-REST-API-Key': '81f67154e5dd055abacc14e5052da513',
-    //   },
-    //   method: "POST",
-    //   data: {
-    //     "order_no": "3a94dad09cef0697c87c58befc7jsapi",
-    //     "refund_fee": 0.1,
-    //     "desc": "退款",
-    //   },
-    //    success: function (res) {
-    //     console.log(res.data)
-    //   }
-    // })
-
-    // var res = {
-    //     "order_no": "3a94dad09cef0697c87c58befc7jsapi",
-    //     "refund_fee": 0.1,
-    //     "desc": "退款",
-    //   }
-    // Bmob.refund(res).then(function (obj) {
-    //   console.log('333', obj)
-    // },
-    //   function (err) {
-    //     console.log('失败了', err)
-    //   });
-
+    
   },
   // onShareAppMessage: function () {
   //   return {
@@ -129,6 +68,23 @@ Page({
   //   }
   // },
   onLoad: function () {
+    var that = this;
+    wx.getStorage({
+      key: 'openid',
+      success: function (res) {
+         console.log(res)
+        that.setData({
+          openid: res.data
+        })
+      },
+    });
+    // var user = new Bmob.User() //开始注册用户
+    // user.auth().then(function (obj) {
+    //   console.log('登陆成功')
+    // },
+    //   function (err) {
+    //     console.log('失败了', err)
+    //   });
 
 
     // that = this;
@@ -158,6 +114,24 @@ Page({
 
 
   },
+  getUserInfo: function (cb) {
+    var that = this
+    if (this.globalData.userInfo) {
+      typeof cb == 'function' && cb(this.globalData.userInfo)
+    } else {
+      //调用登录接口
+      wx.login({
+        success: function () {
+          wx.getUserInfo({
+            success: function (res) {
+              that.globalData.userInfo = res.userInfo
+              typeof cb == 'function' && cb(that.globalData.userInfo)
+            }
+          })
+        }
+      })
+    }
+  },
   noneWindows: function () {
     that.setData({
       writeDiary: "",
@@ -165,8 +139,103 @@ Page({
     })
   },
   onShow: function () {
+    // var that = this;
+    // // var openID = "";
+    // wx.getStorage({
+    //   key: 'openid',
+    //   success: function (res) {
+    //     // console.log(res)
+    //     that.setData({
+    //       openid: res.data
+    //     });
+    //     // console.log(that.data.openid);
+    //     var openID = that.data.openid;
+    //     // console.log(openID)
+    //     // 获取数据库的数据
+    //     // 连接数据库创建类
+    //     var Booking = Bmob.Object.extend("Design_memorandum");
+    //     var query = new Bmob.Query(Booking);
+    //     // 条件查询 条件为用户名等于当前用户名
+    //     query.equalTo("userID", openID)
+    //     query.find({
+    //       success: function (result) {
+    //         // console.log(result)
+    //         console.log("共查询到" + result.length + "条记录");
+    //         // 反转数组 让最后加入的显示在最前面
+    //         result.reverse();
+    //         // 把获得的数据添加到data里面
+    //         that.setData({
+    //           diaryList: result
+    //         })
+    //         console.log(that.data.diaryList)
+    //       },
+    //       error: function (error, result) {
+    //         console.log("查询不到")
+    //       }
+    //     })
+
+    //   },
+    // })
+   // var openID = that.data.openid;
+
+
+
+
+
+
+
+
+
+
+  //   var that = this;
+  //   wx.getStorage({
+  //     key: 'openid',
+  //     success: function (res) {
+  //       // console.log(res)
+  //       that.setData({
+  //         openid: res.data
+  //       });
+  //       var openID = that.data.openid;
+    
+
+  //   var Diary = Bmob.Object.extend("Design_memorandum");
+  //   var query = new Bmob.Query(Diary);
+  //   var query1 = new Bmob.Query(Diary);
+
+  //   // //会员模糊查询
+  //   // if (k) {
+  //   //   query.equalTo("title", { "$regex": "" + k + ".*" });
+  //   //   query1.equalTo("content", { "$regex": "" + k + ".*" });
+  //   // }
+
+  //   //普通会员匹配查询
+  //  // query.equalTo("title", k);
+
+  //   query.descending('createdAt');
+  //   query.include("own")
+  //   // 查询所有数据
+  //   query.limit(that.data.limit);
+  //   var openID = that.data.openid;
+  //   var mainQuery = Bmob.Query.or(query, query1);
+  //   query.equalTo("userID", openID)
+  //   mainQuery.find({
+  //     success: function (results) {
+  //       // 循环处理查询到的数据
+  //       console.log(results);
+  //       that.setData({
+  //         diaryList: results
+  //       })
+  //     },
+  //     error: function (error) {
+  //       console.log("查询失败: " + error.code + " " + error.message);
+  //     }
+  //   })
+   
+  //     }
+  //   })
 
     getList(this);
+   // console(openID);
 
 
     wx.getSystemInfo({
@@ -193,7 +262,8 @@ Page({
   addDiary: function (event) {
     var title = event.detail.value.title;
     var content = event.detail.value.content;
-    var formId = event.detail.formId;
+    //var userID = that.data.openid;
+   // var formId = event.detail.formId;
     console.log("event", event)
     if (!title) {
       common.showTip("标题不能为空", "loading");
@@ -206,6 +276,7 @@ Page({
         loading: true
       })
       var currentUser = Bmob.User.current();
+      //console.log(currentUser.u);
 
       var User = Bmob.Object.extend("_User");
       var UserModel = new User();
@@ -219,6 +290,7 @@ Page({
       var Diary = Bmob.Object.extend("Design_memorandum");
       var diary = new Diary();
       diary.set("title", title);
+      //diary.set("userID", currentUser.userInfo.username);
       //diary.set("formId", formId);//保存formId
       diary.set("content", content);
       //var f = Bmob.File("a.jpg", [""]);
@@ -231,13 +303,13 @@ Page({
       diary.save(null, {
         success: function (result) {
           // 添加成功，返回成功之后的objectId（注意：返回的属性名字是id，不是objectId），你还可以在Bmob的Web管理后台看到对应的数据
-          common.showTip('添加日记成功');
+          common.showTip('添加备忘录成功');
           that.setData({
             writeDiary: false,
             loading: false
           })
 
-          var currentUser = Bmob.User.current();
+         // var currentUser = Bmob.User.current();
 
           //成功后发送模板消息，这个只能在手机上测试，模拟器里面没有formid
           // var temp = {
@@ -319,7 +391,7 @@ Page({
         },
         error: function (result, error) {
           // 添加失败
-          common.showTip('添加日记失败，请重新发布', 'loading');
+          common.showTip('添加备忘录失败，请重新添加', 'loading');
 
         }
       });
@@ -341,7 +413,7 @@ Page({
     var objectId = event.target.dataset.id;
     wx.showModal({
       title: '操作提示',
-      content: '确定要删除要日记？',
+      content: '确定要删除吗？',
       success: function (res) {
         if (res.confirm) {
           //删除日记
@@ -363,11 +435,11 @@ Page({
               // The object was retrieved successfully.
               object.destroy({
                 success: function (deleteObject) {
-                  console.log('删除日记成功');
+                  console.log('删除备忘录成功');
                   getList(that)
                 },
                 error: function (object, error) {
-                  console.log('删除日记失败');
+                  console.log('删除备忘录失败');
                 }
               });
             },
@@ -433,6 +505,11 @@ Page({
 */
 function getList(t, k) {
   that = t;
+  //var that = this;
+  var openID = that.data.openid;
+  //console.log(openID);
+ 
+  
   var Diary = Bmob.Object.extend("Design_memorandum");
   var query = new Bmob.Query(Diary);
   var query1 = new Bmob.Query(Diary);
@@ -441,17 +518,21 @@ function getList(t, k) {
   if (k) {
     query.equalTo("title", { "$regex": "" + k + ".*" });
     query1.equalTo("content", { "$regex": "" + k + ".*" });
+    query.equalTo("userID", openID);
+    query1.equalTo("userID", openID);
   }
 
   //普通会员匹配查询
   query.equalTo("title", k);
-
+  query.equalTo("userID", openID);
+  query1.equalTo("userID", openID);
   query.descending('createdAt');
-  query.include("own")
+  //query.include("own")
   // 查询所有数据
   query.limit(that.data.limit);
-
+ //var openID = that.data.openid;
   var mainQuery = Bmob.Query.or(query, query1);
+ 
   mainQuery.find({
     success: function (results) {
       // 循环处理查询到的数据
@@ -459,6 +540,7 @@ function getList(t, k) {
       that.setData({
         diaryList: results
       })
+      console.log(results.length);
     },
     error: function (error) {
       console.log("查询失败: " + error.code + " " + error.message);
@@ -490,7 +572,7 @@ function modify(t, e) {
           result.set('title', modyTitle);
           result.set('content', modyContent);
           result.save();
-          common.showTip('日记修改成功', 'success', function () {
+          common.showTip('备忘录修改成功', 'success', function () {
             that.onShow();
             that.setData({
               modifyDiarys: false

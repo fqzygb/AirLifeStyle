@@ -1,4 +1,3 @@
-
 // pages/Detailed/Detailed.js
 // 引进日期js
 var util = require('../../utils/util.js');
@@ -14,7 +13,6 @@ Page({
     // 获取用户唯一表示openid
     openid:"",
     // 获取全局app里的用户名
-    // userName: 'Sean涛',
     // 获得数据库传过来的记账数据
     bookingDetailsList: [],
     // 顶部编辑与删除的切换
@@ -86,65 +84,10 @@ Page({
 
 
 
-    //版本1   有BUG  //
-    // // this.onShow();
-    // wx.showToast({
-    //   title: '晒选成功，要再次筛选则需要先选择全部',
-    //   icon:'none'
-    // })
-    // console.log(e)
-    // var arrayName = this.data.array[e.detail.value]
-    // // console.log(this.data.array[e.detail.value])
-    // this.setData({
-    //   index: e.detail.value
-    // })
-    // // console.log(arrayName)
-    // // 从获取到的bookingDetailsList中筛选出用户所选择的类型
-    // var bdList = this.data.bookingDetailsList;
-    // var newBookingDetailList = []
-    // bdList.forEach((v,i)=>{
-    //   if (v.attributes.saveMoney_details.expendDetail == arrayName){
-    //     // console.log(v)
-    //     newBookingDetailList.push(v)
-    //   }
-    // })
-    // console.log(newBookingDetailList)
-    // this.setData({
-    //   bookingDetailsList:newBookingDetailList
-    // })
-    // wx.showToast({
-    //   title: '晒选成功，要再次筛选则需要先选择全部',
-    //   icon: 'none'
-    // })
-    // if (arrayName == '全部'){
-    //   this.onShow();
-    //   wx.showToast({
-    //     title: '晒选成功',
-    //     icon: 'none'
-    //   })
-    // }
-    // // this.onShow();
-
-
+   
   },
 
 
-  // change(e){
-  //   console.log(123)
-  //   wx.showActionSheet({
-  //     itemList: this.data.arr,
-  //     success: (res)=>{
-  //       // console.log(this.data.arr[0])
-  //       this.setData({
-  //         select: this.data.arr[res.tapIndex]
-  //       })
-  //     },
-  //     fail: function (res) {
-  //       console.log(res.errMsg)
-  //     }
-  //   })  
-
-  // },
 
   
   /**
@@ -223,46 +166,7 @@ Page({
 
 
 
-    // 版本1
-    // if (v.radio == true) {
-    //   if (newArr.length > 0) {
-    //     var that = this;
-    //     var Booking = Bmob.Object.extend("Design_accMessages");
-    //     var query = new Bmob.Query(Booking);
-    //     wx.showModal({
-    //       title: '删除提示',
-    //       content: '确定要删除选中的吗',
-    //       success: function (res) {
-    //         if (res.confirm) {
-    //           newArr.forEach((v, i) => {
-    //             console.log(v.id)
-    //             query.get(v.id, {
-    //               success: function (obj) {
-    //                 obj.destroy({
-    //                   success: function (del) {
-    //                     console.log("删除成功");
-    //                   },
-    //                   error: function (obj, error) {
-    //                     console.log("删除失败");
-    //                   }
-    //                 });
-    //               },
-    //               error: function (obj, error) {
-    //                 console.log("查询不到")
-    //               }
-    //             })
-    //           })
-    //         }
-    //       }
-    //     })
-    //   }
-    //   else {
-    //     wx.showToast({
-    //       title: '对不起，您还没有选择要删除的内容！',
-    //       icon: 'none'
-    //     })
-    //   }
-    // }
+    
 
   },
 

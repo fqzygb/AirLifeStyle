@@ -51,7 +51,7 @@
             <view class="weui-media-box__title weui-media-box__title_in-text">
              暂无内容，请点击右下角添加</view>
             <view class="weui-media-box__desc"></view>
-              <button type="primary" bindtap="toAddDiary" hover-class="other-button-hover"> 增加日记 </button>
+            <!-- <button type="primary" bindtap="toAddDiary" hover-class="other-button-hover"> 增加备忘录 </button>-->
 
           </view>
 </block>
@@ -62,7 +62,7 @@
     <view class="page__ft">
       <view class="page__bd page__bd_spacing">
         <view class="weui-footer ">
-          <view class="weui-footer__text">Copyright © 2013-2016 www.bmob.cn</view>
+         <!-- <view class="weui-footer__text">Copyright © 2013-2016 www.bmob.cn</view>-->
         </view>
       </view>
     </view>
@@ -71,8 +71,8 @@
 <view class="js_dialog" id="androidDialog1" style="opacity: 1;" wx:if="{{writeDiary}}">
   <view class="weui-mask"></view>
   <view class="weui-dialog weui-skin_android">
-    <view class="weui-dialog__hd"><strong class="weui-dialog__title">添加日记</strong>  </view>
-    <form bindsubmit="addDiary" report-submit="true">
+    <view class="weui-dialog__hd"><strong class="weui-dialog__title">添加备忘录</strong>  </view>
+    <form bindsubmit="addDiary" >
       <view class="weui-dialog__bd">
         <view class="weui-cells__title">标题</view>
         <view class="weui-cells weui-cells_after-title">
@@ -82,11 +82,11 @@
             </view>
           </view>
         </view>
-        <view class="weui-cells__title">日记内容</view>
+        <view class="weui-cells__title">备忘录内容</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell">
             <view class="weui-cell__bd">
-              <textarea class="weui-textarea" name="content" placeholder="请输入日记内容" style="height: 3.3em" />
+              <textarea class="weui-textarea" name="content" placeholder="请输入备忘录内容" style="height: 3.3em" />
               <view class="weui-textarea-counter">0/200</view>
             </view>
           </view>
@@ -102,7 +102,7 @@
 <view class="js_dialog" id="androidDialog2" style="opacity: 1;" wx:if="{{modifyDiarys}}">
   <view class="weui-mask"></view>
   <view class="weui-dialog weui-skin_android">
-    <view class="weui-dialog__hd"><strong class="weui-dialog__title">修改日记</strong>  </view>
+    <view class="weui-dialog__hd"><strong class="weui-dialog__title">修改备忘录</strong>  </view>
     <form bindsubmit="modifyDiary">
       <view class="weui-dialog__bd">
         <view class="weui-cells__title">标题</view>
@@ -113,11 +113,11 @@
             </view>
           </view>
         </view>
-        <view class="weui-cells__title">日记内容</view>
+        <view class="weui-cells__title">备忘录内容</view>
         <view class="weui-cells weui-cells_after-title">
           <view class="weui-cell">
             <view class="weui-cell__bd">
-              <textarea class="weui-textarea" name="content" value="{{nowContent}}" placeholder="请输入日记内容" style="height: 3.3em" />
+              <textarea class="weui-textarea" name="content" value="{{nowContent}}" placeholder="请输入备忘录内容" style="height: 3.3em" />
               <view class="weui-textarea-counter">0/200</view>
             </view>
           </view>
