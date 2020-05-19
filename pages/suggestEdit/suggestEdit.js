@@ -38,14 +38,14 @@ Page({
       wx.showToast({
         title: '请编辑意见',
         icon:'none',
-        duration:2000
+        duration:1000
       })
       
     } else if (username.length == 0 || username == "undefined"){
       wx.showToast({
         title: '请重新登录',
         icon: 'none',
-        duration: 2000
+        duration: 1000
       })
     }else{
       var Suggest = Bmob.Object.extend("Design_persuggest");
@@ -64,17 +64,17 @@ Page({
           })
           // 用setTimeout定时跳转到意见反馈页面
           setTimeout(function () {
-            wx.navigateTo({
+            wx.redirectTo({
               url: '/pages/suggest/suggest',
             })
-          }, 2000)
+          }, 1000)
         },
         error: function (error) {
           console.log("提交失败")
           wx.showToast({
             title: '提交失败',
             icon: 'none',
-            duration: 2000
+            duration: 1000
           })
         }
       })
