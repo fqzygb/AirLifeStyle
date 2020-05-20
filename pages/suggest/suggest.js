@@ -19,7 +19,8 @@ Page({
     // console.log("aaa");
     var username = this.data.username;
     wx.navigateTo({
-      url: '/pages/suggestEdit/suggestEdit?name='+username,
+     url: '/pages/suggestEdit/suggestEdit?name='+username,
+      //url: '/pages/suggestEdit/suggestEdit',
     })
   },
 

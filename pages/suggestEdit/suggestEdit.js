@@ -1,6 +1,5 @@
 // pages/suggestEdit/suggestEdit.js
 var util = require('../../utils/util.js');
-
 // 引进Bmob后端云JS
 var Bmob = require('../../utils/bmob.js');
 Page({
@@ -11,8 +10,7 @@ Page({
   data: {
     txtarea:'',
     username:'',
-    openid:'',
-    curday:''
+    openid:''
   },
 
 /**
@@ -33,48 +31,57 @@ Page({
     var suggestContent = that.data.txtarea;
     var openid = that.data.openid;
     var username= that.data.username;
-    var curday  = util.formatTime(new Date());
+    console.log("aaa");
+    console.log(username);
+    console.log(openid);
+    console.log("aaa");
     if(suggestContent == ""){
       wx.showToast({
         title: '请编辑意见',
         icon:'none',
-        duration:1000
+        duration:2000
       })
       
-    } else if (username.length == 0 || username == "undefined"){
+    }
+     else if (username.length == 0 ||username == "undefined"){
+      console.log("aaaaaaa")
       wx.showToast({
         title: '请重新登录',
         icon: 'none',
-        duration: 1000
+        duration: 2000
       })
-    }else{
+    }
+    
+    else{
       var Suggest = Bmob.Object.extend("Design_persuggest");
       var suggest = new Suggest();
-      //var daka = new Daka();
+     //console.log("cccccc");
       suggest.set("userID",openid);
       suggest.set("suggestContent",suggestContent);
       suggest.set("biaoshi",true);
       suggest.set("username",username);
-      suggest.set("curday", curday);
       suggest.save(null,{
+        
         success:function(result){
+          //console.log("ddddd");
           wx.showToast({
             title: '提交成功',
-            duration:1000
+            duration:2000
           })
           // 用setTimeout定时跳转到意见反馈页面
           setTimeout(function () {
-            wx.redirectTo({
-              url: '/pages/suggest/suggest',
-            })
-          }, 1000)
+            wx.navigateBack()
+            // wx.navigateTo({
+            //   url: '/pages/suggest/suggest',
+            // })
+          }, 2000)
         },
         error: function (error) {
           console.log("提交失败")
           wx.showToast({
             title: '提交失败',
             icon: 'none',
-            duration: 1000
+            duration: 2000
           })
         }
       })
@@ -88,15 +95,30 @@ Page({
    */
   onLoad: function (options) {
     // console.log(options);
-    var that = this;
-    wx.getStorage({
-      key: 'username',
-      success: function(res) {
-        that.setData({
-          username :res.data
-        })
-      },
+    var username = options.name;
+    this.setData({
+      username
     })
+
+
+
+
+
+
+    var that = this;
+    // this.setData({
+    //   username:username
+    // })
+
+    // wx.getStorage({
+    //   key: 'username',
+    //   success: function(res) {
+    //        console.log(res);
+    //     that.setData({
+    //       username: res.data
+    //     })
+    //   },
+    // })
     wx.getStorage({
       key: 'openid',
       success: function (res) {
@@ -120,6 +142,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+   
 
   },
 

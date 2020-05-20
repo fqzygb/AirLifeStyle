@@ -12,7 +12,7 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     picPath: "",
-    name: ""
+    //username: ""
   },
   //事件处理函数
   bindViewTap: function () {
@@ -42,7 +42,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-    
+    var that = this
      
     
     if (app.globalData.userInfo) {
@@ -72,8 +72,15 @@ Page({
       })
     }
     wx.setStorage({
+      
       key: 'username',
       data: this.data.userInfo.nickName,
+      // success: function (res) {
+      //   console.log(res)
+      //   that.setData({
+      //     username: res.data
+      //   })
+      // }
     })
   },
   getUserInfo: function (e) {
